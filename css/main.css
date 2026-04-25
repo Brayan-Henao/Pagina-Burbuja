@@ -1,0 +1,969 @@
+/* ===================== */
+/*      HEADER BURBUJA   */
+/* ===================== */
+.top-bar {
+  width: 100%;
+  background: #add8f3; /* azul principal */
+  color: #ffffff; /* texto blanco */
+  text-align: center;
+  padding: 6px 0; 
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+}
+.header {
+  width: 100%;
+  background: #ffffff; /* barra blanca */
+  border-bottom: 1px solid #e6f3fc; /* borde muy suave */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* --- LOGO IZQUIERDA --- */
+.header-logo img {
+  height: 50px;
+  display: block;
+}
+
+
+/* --- MENÚ CENTRO --- */
+.header-menu {
+  display: flex;
+  gap: 28px;
+}
+
+.header-menu a {
+  text-decoration: none;
+  color: #89bdde; /* azul secundario fuerte */
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: 0.2s ease;
+}
+
+
+
+/* --- ICONOS DERECHA --- */
+.header-icons {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.header-icons .icon i {
+  font-size: 1.2rem;
+  color: #619cc7; /* azul del menú */
+  transition: 0.2s ease;
+}
+
+.header-icons .icon:hover i {
+  color: #619cc7;
+  transform: scale(1.12);
+}
+/* Dropdown idioma */
+.lang-dropdown {
+  position: relative;
+  margin-right: 8px;
+}
+
+.lang-toggle-btn {
+  background: transparent;
+  border: 1px solid #add8f3;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #247dbc;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.lang-toggle-btn i {
+  font-size: 0.7rem;
+}
+
+/* Menú flotante */
+.lang-menu {
+  position: absolute;
+  right: 0;
+  top: 120%;
+  background: #ffffff;
+  border: 1px solid #e6f3fc;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 4px 0;
+  min-width: 140px;
+  display: none; /* oculto por defecto */
+  z-index: 200;
+}
+
+.lang-menu button {
+  width: 100%;
+  padding: 6px 10px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  font-size: 0.8rem;
+  color: #247dbc;
+  cursor: pointer;
+}
+
+.lang-menu button:hover {
+  background: #f2f8ff;
+}
+
+/* Mostrar menú al pasar el mouse */
+.lang-dropdown.open .lang-menu {
+  display: block;
+}
+.header-menu a {
+  position: relative;
+  text-decoration: none;
+  color: #619cc7;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding-bottom: 4px; /* espacio para la línea */
+}
+
+/* Línea debajo (efecto) */
+.header-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: #619cc7;
+  transition: width 0.2s ease;
+}
+
+/* Hover: aparece la línea */
+.header-menu a:hover::after {
+  width: 100%;
+}
+
+/* Link activo: línea siempre visible */
+.header-menu a.active::after {
+  width: 100%;
+}
+
+
+/* --- RESPONSIVE CELULAR --- */
+@media (max-width: 768px) {
+  .header-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .header-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* =============== HERO INDEX =============== */
+
+/* =============== HERO INDEX =============== */
+
+.home-main {
+  width: 100%;
+}
+
+/* Contenedor del slider */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  max-height: 80vh;                /* evita que sea más alto que la pantalla */
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* Pista que se mueve */
+.hero-track {
+  display: flex;
+  transition: transform 0.7s ease-in-out;
+  /* SIN width: 300%;  👈 deja que el ancho lo den los .hero-slide (100vw cada uno) */
+}
+
+
+/* Cada slide */
+.hero-slide {
+  width: 100vw;                    /* 👈 CLAVE: cada slide ocupa toda la pantalla */
+  max-width: 100vw;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 80px;
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #e3f2fd 40%,
+    #e3f2fd 100%
+  );
+}
+
+/* Texto del slide */
+.hero-text {
+  flex: 1;
+  max-width: 550px;
+}
+
+.hero-text h1 {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  color: #247dbc;
+}
+
+.hero-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #22506c;
+}
+
+/* Video vertical a la derecha */
+.hero-media {
+  flex: 0 0 280px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-media video {
+  width: 100%;
+  aspect-ratio: 9 / 16;           /* formato TikTok */
+  border-radius: 18px;
+  object-fit: cover;
+  background: #000;
+}
+
+/* Puntos de navegación (abajo derecha) */
+.hero-dots {
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+  display: flex;
+  gap: 8px;
+}
+
+.hero-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.hero-dot.active {
+  background: #247dbc;
+  box-shadow: 0 0 0 1px #247dbc;
+}
+
+/* Hover */
+.hero-dot:hover {
+  background: #1e88cc;
+}
+
+/* Responsive */
+.hero-slide {
+  width: 100vw !important;
+  min-width: 100vw !important;
+  max-width: 100vw !important;
+  flex-shrink: 0 !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+
+  padding: 40px 80px;
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #e3f2fd 40%,
+    #e3f2fd 100%
+  );
+}
+
+  .hero-media {
+    flex: 0 0 auto;
+    width: 220px;
+  }
+
+  .hero-text h1 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .hero-text p {
+    text-align: center;
+  }
+
+  .hero-dots {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 16px;
+  }
+/* ============================= */
+/*    SECCIÓN PARA ELLA / ÉL     */
+/* ============================= */
+
+.gender-section {
+  width: 100%;
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.gender-title {
+  text-align: center;
+  font-size: 1.9rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #247dbc;
+}
+
+.gender-panels {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* PANEL */
+.gender-panel {
+  background: #f0f7ff;
+  border-radius: 16px;
+  padding: 20px;
+  width: 45%;
+  min-width: 300px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+  text-align: center;
+  transition: transform 0.25s ease;
+}
+
+.gender-panel:hover {
+  transform: translateY(-6px);
+}
+
+.gender-panel h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1e88cc;
+  margin-bottom: 20px;
+}
+
+/* GRID DE IMÁGENES */
+.gender-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 12px;
+}
+
+.gender-grid img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* BOTÓN */
+.gender-btn {
+  margin-top: 18px;
+  display: inline-block;
+  background: #1e88cc;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.gender-btn:hover {
+  background: #7f919c;
+}
+/* =============================== */
+/* =============================== */
+/* =============================== */
+/*             FOOTER              */
+/* =============================== */
+
+.footer {
+  background: #f0f8ff;
+  margin-top: 60px;
+  padding: 50px 0 0;
+}
+
+/* Contenedor de columnas */
+.footer-container {
+  width: 100%;
+  max-width: 900px; 
+  margin: 0 auto;
+  padding: 40px 20px;
+
+  display: flex;
+  justify-content: flex-start; 
+  align-items: flex-start;
+  gap: 60px;
+  text-align: left;
+}
+
+/* Columnas */
+.footer-col {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-col:first-child {
+  max-width: 260px;
+}
+
+/* Logo */
+.footer-logo {
+  width: 190px;
+  margin-bottom: 12px;
+}
+
+/* Descripción */
+.footer-desc {
+  font-size: 0.9rem;
+  color: #22506c;
+  line-height: 1.5;
+}
+
+/* Títulos */
+.footer-col h4 {
+  font-size: 1.1rem;
+  margin-bottom: 14px;
+  color: #247dbc;
+  font-weight: 600;
+}
+
+/* Listas */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+  color: #22506c;
+  font-size: 0.95rem;
+}
+
+/* Links con línea animada */
+.footer-col ul li a {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+  text-decoration: none;
+  color: #22506c;
+  transition: color 0.2s;
+}
+
+.footer-col ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #1e88cc;
+  transition: width 0.25s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #1e88cc;
+}
+
+.footer-col ul li a:hover::after {
+  width: 100%;
+}
+
+/* Redes sociales – estilo Shopify */
+.footer-social {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+/* Contenedor circular del icono */
+.footer-social a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #247dbc;
+  text-decoration: none;
+
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+
+  transition: transform 0.25s ease, 
+              box-shadow 0.25s ease,
+              background 0.25s ease,
+              color 0.25s ease;
+}
+
+/* Icono dentro */
+.footer-social a i {
+  font-size: 1.4rem;
+}
+
+/* Hover: se eleva un poquito y cambia a azul */
+.footer-social a:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: #247dbc;
+  color: #ffffff;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+}
+/* Parte inferior */
+.footer-bottom {
+  width: 100%;
+  background: #add8f3;
+  color: #ffffff;
+  text-align: center;
+  padding: 12px 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .footer-col {
+    text-align: center;
+  }
+
+  .footer-social a {
+    margin: 0 8px;
+  }
+}
+
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 22px;
+  right: 18px;
+  width: 60px;
+  height: 60px;
+  background: #25d366; /* Verde WhatsApp */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  z-index: 3000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.12);
+  background: #1ebe5d;
+}
+
+/* =============================== */
+/*        CATÁLOGO PARA ELLA       */
+/* =============================== */
+
+.catalog-main {
+  width: 100%;
+  padding: 50px 0;
+  background: #ffffff;
+}
+
+.catalog-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #247dbc;
+  margin-bottom: 40px;
+}
+
+/* GRID DE 4 POR FILA */
+.catalog-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+/* TARJETA */
+.product-card {
+  background: #f5faff;
+  padding: 18px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* FOTO */
+.product-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* NOMBRE DEL PRODUCTO CON LÍNEA */
+.product-name {
+  font-size: 1rem;
+  margin: 14px 0 6px;
+  color: #22506c;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.product-name::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #1e88cc;
+  transition: width 0.25s ease;
+}
+
+.product-card:hover .product-name::after {
+  width: 100%;
+}
+
+/* PRECIO */
+.product-price {
+  font-size: 1rem;
+  color: #1e88cc;
+  font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .catalog-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .catalog-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+/* Filtro catálogo */
+.catalog-filter {
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  padding: 0 10px;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+.catalog-filter label {
+  font-size: 0.95rem;
+  color: #22506c;
+}
+
+.catalog-filter select {
+  border-radius: 999px;
+  border: 1px solid #add8f3;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  color: #247dbc;
+  background: #ffffff;
+  outline: none;
+  cursor: pointer;
+}
+/* =============================== */
+/*     PÁGINA DE PRODUCTO (IZQ)   */
+/* =============================== */
+
+.product-main {
+  width: 100%;
+  background: #ffffff;
+  padding: 40px 0 60px;
+}
+
+.product-config {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Columna izquierda */
+.product-left {
+  max-width: 480px;
+}
+
+/* Tarjeta de foto */
+.product-photo-card {
+  background: #f5faff;
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  margin-bottom: 18px;
+}
+
+.product-photo-card img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+/* Subir foto */
+.product-upload {
+  margin-bottom: 24px;
+}
+
+.product-upload label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #247dbc;
+  margin-bottom: 6px;
+}
+
+.product-upload input[type="file"] {
+  display: block;
+  font-size: 0.9rem;
+  padding: 6px 0;
+}
+
+.product-upload small {
+  display: block;
+  font-size: 0.8rem;
+  color: #6b899e;
+  margin-top: 4px;
+}
+
+/* Opciones del producto */
+.product-options {
+  background: #f0f8ff;
+  border-radius: 18px;
+  padding: 20px 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Grupo de opción */
+.option-group {
+  margin-bottom: 16px;
+}
+
+.option-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #22506c;
+  margin-bottom: 6px;
+}
+
+/* Radios en línea */
+.option-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 0.9rem;
+  color: #22506c;
+}
+
+.option-row label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+/* Textareas */
+.option-group textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #add8f3;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  resize: vertical;
+  outline: none;
+}
+
+.option-group textarea:focus {
+  border-color: #247dbc;
+  box-shadow: 0 0 0 1px rgba(36,125,188,0.2);
+}
+
+.option-group small {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: #6b899e;
+}
+
+/* Precio final */
+.price-box {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed #c7dff2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #22506c;
+}
+
+.price-box strong {
+  font-size: 1.1rem;
+  color: #1e88cc;
+}
+
+/* Utilidad */
+.hidden {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-left {
+    max-width: 100%;
+  }
+}
+/* ======= LAYOUT PRODUCTO ======= */
+.producto-layout {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* IZQUIERDA */
+.producto-left {
+  flex: 1;
+}
+
+.producto-left img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* DERECHA */
+.producto-right {
+  flex: 1;
+  background: #f0f8ff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.producto-title {
+  font-size: 2rem;
+  color: #247dbc;
+  margin-bottom: 10px;
+}
+
+.producto-price-base {
+  font-size: 1.1rem;
+  color: #22506c;
+  margin-bottom: 20px;
+}
+
+.producto-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.producto-field label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #22506c;
+}
+
+.producto-field input,
+.producto-field select,
+.producto-field textarea {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #cfe6ff;
+  font-size: 0.9rem;
+}
+
+.producto-field textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+
+.producto-total {
+  margin-top: 15px;
+  font-size: 1.3rem;
+  color: #1e88cc;
+}
+
+.producto-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border: none;
+  border-radius: 50px;
+  background: #1e88cc;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.producto-btn:hover {
+  background: #7f919c;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .producto-layout {
+    flex-direction: column;
+  }
+}

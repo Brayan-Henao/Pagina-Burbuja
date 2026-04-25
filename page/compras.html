@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Accesorios personalizados: relicarios y regalos con significado, con envío a toda Colombia y detalles que llegan al corazón." />
+  <meta name="author" content="Brayan Henao" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:title" content="Burbuja" />
+  <meta property="og:description" content="Accesorios personalizados: relicarios y regalos con significado, con envío a toda Colombia y detalles que llegan al corazón." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://burbuja.com" />
+  <meta property="og:image" content="https://burbuja.com/og-image.jpg" />
+
+  <title>Burbuja.col - Preparar pedido</title>
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="canonical" href="https://burbuja.com" />
+
+  <link rel="preload" href="/assets/font/castoro-v19-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Tus estilos -->
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+
+  <a href="https://wa.me/573229103401"
+     class="whatsapp-btn"
+     target="_blank"
+     aria-label="WhatsApp Contacto">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <div class="top-bar">Regalos personalizados</div>
+
+  <header class="header">
+    <div class="header-container">
+
+      <div class="header-logo">
+        <img src="/image/logo.png" alt="Burbuja Logo" />
+      </div>
+
+      <!-- MENÚ (rutas correctas y consistentes) -->
+      <nav class="header-menu">
+        <a href="/index.html">Inicio</a>
+        <a href="/page/para_ella.html">Para ella</a>
+        <a href="/page/para_el.html">Para él</a>
+        <a href="/page/Contacto.html">Contacto</a>
+        <a href="/page/nosotros.html">Nuestra historia</a>
+      </nav>
+
+      <div class="header-icons">
+
+        <div class="lang-dropdown">
+          <button class="lang-toggle-btn" type="button">
+            ES <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="lang-menu">
+            <button type="button">ES - Español</button>
+            <button type="button">EN - English</button>
+          </div>
+        </div>
+
+        <a href="/buscar.html" class="icon" title="Buscar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+        <a href="/cuenta.html" class="icon" title="Mi cuenta">
+          <i class="fa-regular fa-user"></i>
+        </a>
+        <a href="/carrito.html" class="icon" title="Carrito">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </a>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="product-main">
+    <section class="producto-layout">
+
+      <!-- IZQUIERDA: RESUMEN DEL PEDIDO -->
+      <div class="producto-left">
+        <div id="resumen-pedido"></div>
+      </div>
+
+      <!-- DERECHA: DATOS DEL CLIENTE -->
+      <div class="producto-right">
+        <h1 class="producto-title">Preparar pedido</h1>
+
+        <!-- ACCESO / CUENTA -->
+        <div class="producto-field" style="margin-bottom:14px;">
+          <div id="auth-info" style="margin-bottom:10px;"></div>
+
+          <div id="auth-box">
+            <label style="display:block; margin-bottom:6px;">Cuenta</label>
+
+            <input id="auth-email" type="email" placeholder="Correo" style="margin-bottom:10px;" />
+            <input id="auth-pass" type="password" placeholder="Contraseña" style="margin-bottom:10px;" />
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <button type="button" id="btn-login" class="producto-btn" style="padding:10px 14px; width:auto;">
+                Iniciar sesión
+              </button>
+              <button type="button" id="btn-register" class="producto-btn" style="padding:10px 14px; width:auto;">
+                Crear cuenta
+              </button>
+              <button type="button" id="btn-logout" class="producto-btn" style="padding:10px 14px; width:auto; display:none;">
+                Cerrar sesión
+              </button>
+            </div>
+
+            <small style="display:block; margin-top:8px; opacity:.8;">
+              (Esto se guarda en el navegador para pruebas. Cuando tengas backend, lo pasamos a real.)
+            </small>
+          </div>
+        </div>
+
+        <!-- FORM -->
+        <form id="checkout-form">
+
+          <div class="producto-field">
+            <label>Nombre completo</label>
+            <input id="nombre" type="text" required>
+          </div>
+
+          <div class="producto-field">
+            <label>Teléfono</label>
+            <input id="telefono" type="text" required>
+          </div>
+
+          <div class="producto-field">
+            <label>Dirección de entrega</label>
+            <input id="direccion" type="text" required>
+          </div>
+
+          <div class="producto-field">
+            <label>Notas del pedido</label>
+            <textarea id="notas" rows="4" placeholder="Ej: Entregar después de las 3pm..."></textarea>
+          </div>
+
+          <button class="producto-btn" type="submit">
+            Finalizar pedido
+          </button>
+
+          <!-- SEGUIR COMPRANDO -->
+          <button type="button" id="btn-seguir" class="producto-btn" style="margin-top:10px;">
+            Seguir comprando
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-col">
+        <img src="/image/logo.png" alt="Burbuja Logo" class="footer-logo">
+        <p class="footer-desc">
+          Accesorios personalizados<br> hechos con amor.<br>
+          Pequeños detalles que crean <br>grandes recuerdos.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Soporte</h4>
+        <ul>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="#">Política de envíos</a></li>
+          <li><a href="#">Política de devoluciones</a></li>
+          <li><a href="#">Términos y condiciones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-contact">
+        <h4>Contáctanos</h4>
+        <ul>
+          <li><i class="fa-solid fa-envelope"></i> burbuja.col@gmail.com</li>
+          <li><i class="fa-solid fa-phone"></i> +57 322 910 3401</li>
+          <li><i class="fa-solid fa-location-dot"></i> Medellín - Colombia</li>
+        </ul>
+
+        <div class="footer-social">
+          <a href="https://www.instagram.com/burbuja.col/" target="_blank" rel="noopener">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://facebook.com/tu_pagina" target="_blank" rel="noopener">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a href="https://www.tiktok.com/@tu_usuario" target="_blank" rel="noopener">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+          <a href="https://wa.me/573229103401?text=Hola%20Burbuja,%20quiero%20más%20información%20💙"
+             target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 Burbuja.col – Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const WHATSAPP = "573229103401";
+
+    function formatoCOP(valor) {
+      return valor.toLocaleString("es-CO", {
+        style: "currency",
+        currency: "COP",
+        maximumFractionDigits: 0
+      });
+    }
+
+    function getJSON(key, fallback) {
+      try { return JSON.parse(localStorage.getItem(key) || "null") ?? fallback; }
+      catch { return fallback; }
+    }
+
+    function setJSON(key, value) {
+      localStorage.setItem(key, JSON.stringify(value));
+    }
+
+    function safeText(s) {
+      return String(s || "").trim();
+    }
+
+    // 1) Resumen
+    const boxResumen = document.getElementById("resumen-pedido");
+    const pedido = getJSON("pedido_burbuja", null);
+
+    if (boxResumen) {
+      if (!pedido) {
+        boxResumen.innerHTML = `
+          <div class="producto-right">
+            <h2 class="producto-title">Resumen del pedido</h2>
+            <p>No hay pedido cargado. Vuelve a elegir un producto.</p>
+            <a class="producto-btn" href="/page/para_ella.html" style="display:inline-block; text-align:center;">
+              Ir a productos
+            </a>
+          </div>
+        `;
+      } else {
+        boxResumen.innerHTML = `
+          <div class="producto-right">
+            <h2 class="producto-title">Resumen del pedido</h2>
+
+            <img src="${pedido.img}" alt="${pedido.name}" style="width:100%; border-radius:14px; margin:10px 0;">
+
+            <p style="margin:0;"><strong>${pedido.name}</strong></p>
+            <p style="margin:6px 0 0 0;">Precio base: <strong>${formatoCOP(pedido.priceBase)}</strong></p>
+            <p style="margin:6px 0 0 0;">Grabado: <strong>${pedido.grabado === "si" ? "Sí (+ $10.000)" : "No"}</strong></p>
+
+            ${pedido.grabado === "si" && pedido.textoGrabado
+              ? `<p style="margin:6px 0 0 0;">Texto grabado: "${pedido.textoGrabado}"</p>`
+              : ""}
+
+            ${pedido.mensajeTarjeta
+              ? `<p style="margin:6px 0 0 0;">Mensaje tarjeta: "${pedido.mensajeTarjeta}"</p>`
+              : ""}
+
+            <div class="producto-total" style="margin-top:12px;">
+              <strong>Total: ${formatoCOP(pedido.total)}</strong>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    // 2) Seguir comprando
+    const btnSeguir = document.getElementById("btn-seguir");
+    if (btnSeguir) {
+      btnSeguir.addEventListener("click", () => {
+        window.location.href = "/index.html";
+      });
+    }
+
+    // 3) Cuenta
+    const authInfo = document.getElementById("auth-info");
+    const authEmail = document.getElementById("auth-email");
+    const authPass = document.getElementById("auth-pass");
+    const btnLogin = document.getElementById("btn-login");
+    const btnRegister = document.getElementById("btn-register");
+    const btnLogout = document.getElementById("btn-logout");
+
+    const inputNombre = document.getElementById("nombre");
+    const inputTelefono = document.getElementById("telefono");
+    const inputDireccion = document.getElementById("direccion");
+    const inputNotas = document.getElementById("notas");
+
+    function renderAuthUI() {
+      const session = getJSON("burbuja_session", null);
+      const users = getJSON("burbuja_users", {});
+
+      if (session && users[session.email]) {
+        const u = users[session.email];
+        if (authInfo) authInfo.innerHTML = `<strong>Sesión activa:</strong> ${session.email}`;
+        if (btnLogout) btnLogout.style.display = "inline-block";
+        if (btnLogin) btnLogin.style.display = "none";
+        if (btnRegister) btnRegister.style.display = "none";
+        if (authEmail) authEmail.style.display = "none";
+        if (authPass) authPass.style.display = "none";
+
+        if (inputNombre && !inputNombre.value) inputNombre.value = u.nombre || "";
+        if (inputTelefono && !inputTelefono.value) inputTelefono.value = u.telefono || "";
+        if (inputDireccion && !inputDireccion.value) inputDireccion.value = u.direccion || "";
+      } else {
+        if (authInfo) authInfo.innerHTML = `<strong>Invitado:</strong> puedes comprar igual, o crear cuenta para guardar tus datos.`;
+        if (btnLogout) btnLogout.style.display = "none";
+        if (btnLogin) btnLogin.style.display = "inline-block";
+        if (btnRegister) btnRegister.style.display = "inline-block";
+        if (authEmail) authEmail.style.display = "block";
+        if (authPass) authPass.style.display = "block";
+      }
+    }
+
+    function setSession(email) {
+      setJSON("burbuja_session", { email });
+      renderAuthUI();
+    }
+
+    if (btnRegister) {
+      btnRegister.addEventListener("click", () => {
+        const email = safeText(authEmail?.value);
+        const pass = safeText(authPass?.value);
+
+        if (!email || !pass) return alert("Escribe correo y contraseña.");
+
+        const users = getJSON("burbuja_users", {});
+        if (users[email]) return alert("Ese correo ya existe. Inicia sesión.");
+
+        users[email] = { pass, nombre: "", telefono: "", direccion: "" };
+        setJSON("burbuja_users", users);
+
+        setSession(email);
+        alert("Cuenta creada. Ya puedes comprar con tu cuenta.");
+      });
+    }
+
+    if (btnLogin) {
+      btnLogin.addEventListener("click", () => {
+        const email = safeText(authEmail?.value);
+        const pass = safeText(authPass?.value);
+
+        const users = getJSON("burbuja_users", {});
+        if (!users[email] || users[email].pass !== pass) return alert("Correo o contraseña incorrectos.");
+
+        setSession(email);
+        alert("Sesión iniciada.");
+      });
+    }
+
+    if (btnLogout) {
+      btnLogout.addEventListener("click", () => {
+        localStorage.removeItem("burbuja_session");
+        if (authEmail) authEmail.value = "";
+        if (authPass) authPass.value = "";
+        renderAuthUI();
+      });
+    }
+
+    renderAuthUI();
+
+    // 4) WhatsApp
+    const form = document.getElementById("checkout-form");
+
+    function buildWhatsAppMessage(data) {
+      const lines = [
+        "Hola Burbuja 👋, quiero hacer este pedido:",
+        "",
+        `🛍️ Producto: ${data.pedido.name}`,
+        `💰 Total: ${formatoCOP(data.pedido.total)}`,
+        `🔩 Grabado: ${data.pedido.grabado === "si" ? "Sí (+ $10.000)" : "No"}`
+      ];
+
+      if (data.pedido.grabado === "si" && data.pedido.textoGrabado) lines.push(`✍️ Texto grabado: ${data.pedido.textoGrabado}`);
+      if (data.pedido.mensajeTarjeta) lines.push(`💌 Mensaje tarjeta: ${data.pedido.mensajeTarjeta}`);
+
+      lines.push("");
+      lines.push("📦 Datos de entrega:");
+      lines.push(`Nombre: ${data.nombre}`);
+      lines.push(`Teléfono: ${data.telefono}`);
+      lines.push(`Dirección: ${data.direccion}`);
+      if (data.notas) lines.push(`Notas: ${data.notas}`);
+
+      return lines.join("\n");
+    }
+
+    function saveUserDataIfLoggedIn(nombre, telefono, direccion) {
+      const session = getJSON("burbuja_session", null);
+      if (!session) return;
+
+      const users = getJSON("burbuja_users", {});
+      if (!users[session.email]) return;
+
+      users[session.email].nombre = nombre;
+      users[session.email].telefono = telefono;
+      users[session.email].direccion = direccion;
+      setJSON("burbuja_users", users);
+    }
+
+    function saveOrderHistory(orderPayload) {
+      const history = getJSON("burbuja_orders", []);
+      history.push({ ...orderPayload, createdAt: new Date().toISOString() });
+      setJSON("burbuja_orders", history);
+    }
+
+    if (form) {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        if (!pedido) return alert("No hay pedido cargado. Vuelve a elegir un producto.");
+
+        const nombre = safeText(inputNombre?.value);
+        const telefono = safeText(inputTelefono?.value);
+        const direccion = safeText(inputDireccion?.value);
+        const notas = safeText(inputNotas?.value);
+
+        if (!nombre || !telefono || !direccion) return alert("Completa nombre, teléfono y dirección.");
+
+        saveUserDataIfLoggedIn(nombre, telefono, direccion);
+
+        const session = getJSON("burbuja_session", null);
+        saveOrderHistory({ userEmail: session?.email || null, nombre, telefono, direccion, notas, pedido });
+
+        const msg = buildWhatsAppMessage({ nombre, telefono, direccion, notas, pedido });
+        window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, "_blank");
+      });
+    }
+  });
+  </script>
+
+</body>
+</html>

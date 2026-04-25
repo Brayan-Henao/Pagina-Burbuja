@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description" content="Accesorios personalizados: relicarios y regalos con significado, con envío a toda Colombia y detalles que llegan al corazón." />
+  <meta name="author" content="Brayan Henao" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:title" content="Burbuja" />
+  <meta property="og:description" content="Accesorios personalizados: relicarios y regalos con significado, con envío a toda Colombia y detalles que llegan al corazón." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://burbuja.com" />
+  <meta property="og:image" content="https://burbuja.com/og-image.jpg" />
+
+  <title>Burbuja.col - Producto</title>
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="canonical" href="https://burbuja.com" />
+
+  <link rel="preload" href="/assets/font/castoro-v19-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Tus estilos -->
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a href="https://wa.me/573229103401?text=Hola%20Burbuja,%20quiero%20más%20información%20💙"
+     class="whatsapp-btn"
+     target="_blank"
+     aria-label="WhatsApp Contacto">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <div class="top-bar">Regalos personalizados</div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-container">
+
+      <div class="header-logo">
+        <img src="/image/logo.png" alt="Burbuja Logo" />
+      </div>
+
+      <nav class="header-menu">
+        <a href="/index.html">Inicio</a>
+        <a href="/page/para_ella.html">Para ella</a>
+        <a href="/page/para_el.html">Para él</a>
+        <a href="/page/Contacto.html">Contacto</a>
+        <a href="/page/nosotros.html">Nuestra historia</a>
+      </nav>
+
+      <div class="header-icons">
+        <div class="lang-dropdown">
+          <button class="lang-toggle-btn" type="button">
+            ES <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="lang-menu">
+            <button type="button">ES - Español</button>
+            <button type="button">EN - English</button>
+          </div>
+        </div>
+
+        <a href="/buscar.html" class="icon" title="Buscar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+        <a href="/cuenta.html" class="icon" title="Mi cuenta">
+          <i class="fa-regular fa-user"></i>
+        </a>
+        <a href="/carrito.html" class="icon" title="Carrito">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- PRODUCTO -->
+  <main class="product-main">
+    <section class="producto-layout">
+
+      <!-- IZQUIERDA: FOTO -->
+      <div class="producto-left">
+        <img id="product-img" src="/catalog/Catalogo_page-0001.jpg" alt="Producto seleccionado">
+      </div>
+
+      <!-- DERECHA: DETALLES -->
+      <div class="producto-right">
+        <h1 id="product-name" class="producto-title">Producto</h1>
+
+        <p class="producto-price-base">
+          Precio base: <strong><span id="product-price">$0</span></strong>
+        </p>
+
+        <div class="producto-field">
+          <label>Sube tu foto:</label>
+          <input id="foto" type="file" accept="image/*">
+        </div>
+
+        <div class="producto-field">
+          <label>Tipo:</label>
+          <select id="tipo">
+            <option>Collar</option>
+            <option>Pulsera</option>
+            <option>Llavero</option>
+          </select>
+        </div>
+
+        <div class="producto-field">
+          <label>Color:</label>
+          <select id="color">
+            <option>Dorado</option>
+            <option>Plateado</option>
+          </select>
+        </div>
+
+        <div class="producto-field">
+          <label>¿Grabado láser? (+ $10.000)</label>
+          <select id="grabado">
+            <option value="no">No</option>
+            <option value="si">Sí</option>
+          </select>
+        </div>
+
+        <div class="producto-field" id="grabado-box" style="display:none;">
+          <label>Texto para el grabado:</label>
+          <textarea id="texto-grabado" placeholder="Ej: Te amo por siempre"></textarea>
+        </div>
+
+        <div class="producto-field">
+          <label>Mensaje para la tarjeta:</label>
+          <textarea id="mensaje-tarjeta" placeholder="Escribe tu mensaje aquí..."></textarea>
+        </div>
+
+        <div class="producto-total">
+          <strong>Total: <span id="total">$0</span></strong>
+        </div>
+
+        <button id="btn-checkout" class="producto-btn">
+          Preparar pedido
+        </button>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-col">
+        <img src="/image/logo.png" alt="Burbuja Logo" class="footer-logo">
+        <p class="footer-desc">
+          Accesorios personalizados<br> hechos con amor.<br>
+          Pequeños detalles que crean <br>grandes recuerdos.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Soporte</h4>
+        <ul>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="#">Política de envíos</a></li>
+          <li><a href="#">Política de devoluciones</a></li>
+          <li><a href="#">Términos y condiciones</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-contact">
+        <h4>Contáctanos</h4>
+        <ul>
+          <li><i class="fa-solid fa-envelope"></i> burbuja.col@gmail.com</li>
+          <li><i class="fa-solid fa-phone"></i> +57 322 910 3401</li>
+          <li><i class="fa-solid fa-location-dot"></i> Medellín - Colombia</li>
+        </ul>
+
+        <div class="footer-social">
+          <a href="https://www.instagram.com/burbuja.col/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://facebook.com/tu_pagina" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.tiktok.com/@tu_usuario" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://wa.me/573229103401?text=Hola%20Burbuja,%20quiero%20más%20información%20💙" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 Burbuja.col – Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <!-- Idioma: menú desplegable -->
+  <script>
+    const langDropdown = document.querySelector('.lang-dropdown');
+    const langToggleBtn = document.querySelector('.lang-toggle-btn');
+
+    if (langDropdown && langToggleBtn) {
+      langToggleBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        langDropdown.classList.toggle('open');
+      });
+
+      document.addEventListener('click', function () {
+        langDropdown.classList.remove('open');
+      });
+    }
+  </script>
+
+  <!-- LÓGICA PRODUCTO -->
+  <script>
+    // "Base de datos" productos (8)
+    const productos = {
+      1: { name: "Relicario Clásico",  price: 35000, img: "/catalog/Catalogo_page-0001.jpg" },
+      2: { name: "Relicario Premium",  price: 40000, img: "/catalog/Catalogo_page-0002.jpg" },
+      3: { name: "Burbuja Amor",       price: 45000, img: "/catalog/Catalogo_page-0003.jpg" },
+      4: { name: "Burbuja Especial",   price: 50000, img: "/catalog/Catalogo_page-0004.jpg" },
+      5: { name: "Pulsera Plata",      price: 38000, img: "/catalog/Catalogo_page-0005.jpg" },
+      6: { name: "Collar Plata",       price: 38000, img: "/catalog/Catalogo_page-0006.jpg" },
+      7: { name: "Esfera Celeste",     price: 40000, img: "/catalog/Catalogo_page-0007.jpg" },
+      8: { name: "Esfera Especial",    price: 20000, img: "/catalog/Catalogo_page-0008.jpg" },
+    };
+
+    function formatoCOP(valor) {
+      return valor.toLocaleString("es-CO", {
+        style: "currency",
+        currency: "COP",
+        maximumFractionDigits: 0
+      });
+    }
+
+    // Leer ID de la URL
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id") || "1";
+    const producto = productos[id] || productos["1"];
+
+    // DOM
+    const elName = document.getElementById("product-name");
+    const elPrice = document.getElementById("product-price");
+    const elImg = document.getElementById("product-img");
+    const elTotal = document.getElementById("total");
+
+    const grabadoSelect = document.getElementById("grabado");
+    const grabadoBox = document.getElementById("grabado-box");
+    const textoGrabado = document.getElementById("texto-grabado");
+    const mensajeTarjeta = document.getElementById("mensaje-tarjeta");
+
+    const tipo = document.getElementById("tipo");
+    const color = document.getElementById("color");
+
+    const btnCheckout = document.getElementById("btn-checkout");
+
+    // Pintar producto
+    elName.textContent = producto.name;
+    elPrice.textContent = formatoCOP(producto.price);
+    elImg.src = producto.img;
+
+    // Total
+    const extraGrabado = 10000;
+
+    function calcularTotal() {
+      let total = producto.price;
+      if (grabadoSelect.value === "si") total += extraGrabado;
+      elTotal.textContent = formatoCOP(total);
+      return total;
+    }
+
+    // Inicial
+    calcularTotal();
+
+    // Mostrar/ocultar grabado + recalcular
+    grabadoSelect.addEventListener("change", () => {
+      grabadoBox.style.display = grabadoSelect.value === "si" ? "block" : "none";
+      calcularTotal();
+    });
+
+    // Preparar pedido (guardar en localStorage + ir a compras)
+    btnCheckout.addEventListener("click", () => {
+      const total = calcularTotal();
+
+      const pedido = {
+        id: id,
+        name: producto.name,
+        img: producto.img,
+        priceBase: producto.price,
+        grabado: grabadoSelect.value,
+        textoGrabado: grabadoSelect.value === "si" ? (textoGrabado.value || "").trim() : "",
+        mensajeTarjeta: (mensajeTarjeta.value || "").trim(),
+        tipo: tipo.value,
+        color: color.value,
+        total: total
+      };
+
+      localStorage.setItem("pedido_burbuja", JSON.stringify(pedido));
+      window.location.href = "/page/compras.html";
+    });
+  </script>
+
+</body>
+</html>
